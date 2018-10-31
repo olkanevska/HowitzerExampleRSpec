@@ -4,7 +4,7 @@ class LoginPage < Howitzer::Web::Page
   validate :url, %r{/sign-in/?\z}
   section :main_menu
 
-  element :link, :xpath, ->(value) { "//a[contains(text(),'#{value}')]" }
+  element :link, :link, ->(name) { name }
 
   def navigate_to_link(text)
     Howitzer::Log.info "Navigate to #{text} page"
